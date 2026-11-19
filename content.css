@@ -1,0 +1,95 @@
+/* Floating Prev / Next control, pinned to the bottom-right corner of the
+   window so it stays visible while you scroll.
+   Uses GitHub's Primer CSS variables so it follows the light / dark /
+   high-contrast theme you have selected. */
+#prnav-root {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  background: var(--overlay-bgColor, var(--bgColor-default, #ffffff));
+  border: 1px solid var(--borderColor-default, #d1d9e0);
+  border-radius: 8px;
+  box-shadow: var(--shadow-floating-small, 0 0 0 1px rgba(209, 217, 224, 0.5), 0 6px 12px -3px rgba(37, 41, 46, 0.04), 0 6px 18px 0 rgba(37, 41, 46, 0.12));
+  color: var(--fgColor-default, #1f2328);
+  font: 500 12px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  user-select: none;
+}
+
+#prnav-root .prnav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 6px;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+#prnav-root .prnav-prev {
+  padding-left: 6px;
+}
+
+#prnav-root .prnav-next {
+  padding-right: 6px;
+}
+
+#prnav-root a.prnav-btn:hover {
+  background: var(--control-transparent-bgColor-hover, var(--bgColor-muted, #f6f8fa));
+  text-decoration: none;
+}
+
+#prnav-root a.prnav-btn:focus-visible,
+#prnav-root a.prnav-pos:focus-visible {
+  outline: 2px solid var(--focus-outlineColor, #0969da);
+  outline-offset: -2px;
+}
+
+#prnav-root .prnav-btn[aria-disabled="true"] {
+  color: var(--fgColor-disabled, #818b98);
+  cursor: default;
+}
+
+#prnav-root .prnav-pos {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.5em;
+  height: 20px;
+  padding: 0 8px;
+  border-left: 1px solid var(--borderColor-muted, #d1d9e0b3);
+  border-right: 1px solid var(--borderColor-muted, #d1d9e0b3);
+  color: var(--fgColor-muted, #59636e);
+  font-variant-numeric: tabular-nums;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+#prnav-root a.prnav-pos:hover {
+  color: var(--fgColor-accent, #0969da);
+  text-decoration: none;
+}
+
+#prnav-root svg {
+  flex: none;
+}
+
+#prnav-root svg path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media print {
+  #prnav-root {
+    display: none;
+  }
+}
