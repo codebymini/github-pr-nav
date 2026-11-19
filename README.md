@@ -2,6 +2,13 @@
 
 A small Chrome extension that adds a floating **‹ Prev · 3 / 8 · Next ›** bar to GitHub pull requests. Use it to step through a PR's commits one at a time.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/screenshot-dark.png">
+  <img alt="A GitHub pull request commit page with the extension's floating Prev · 3 / 6 · Next bar in the bottom-right corner" src="docs/screenshot-light.png">
+</picture>
+
+<sub>The extension's bar (outlined in orange for this screenshot) on commit 3 of 6. GitHub's own Prev / Next in the commit header scrolls away with the page; this bar stays in the corner.</sub>
+
 - The bar sits in the bottom-right corner and stays there while you scroll.
 - It shows which commit you're on and how many there are, e.g. **3 / 8**.
 - Keyboard shortcuts: **⌥⇧← / ⌥⇧→** (macOS) or **Alt+Shift+← / →** (Windows/Linux).
@@ -95,6 +102,7 @@ GitHub moves between pages without full reloads, so the extension watches for pa
 | `content.js` | Fetches the commit list and draws the bar |
 | `content.css` | Styling. Uses GitHub's own theme colours, so it follows light/dark mode |
 | `icons/` | Extension icons |
+| `docs/` | Screenshots used in this README (not part of the extension) |
 
 ## Troubleshooting
 
